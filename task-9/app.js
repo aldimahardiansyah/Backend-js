@@ -1,12 +1,12 @@
 /**
  * TODO 9:
- * - Import semua method FruitController
- * - Refactor variable ke ES6 Variable
+ * - Import semua method FruitController (done)
+ * - Refactor variable ke ES6 Variable (done)
  *
  * @hint - Gunakan Destructing Object
  */
 
- var importHere = "";
+ const {index, store, update, destroy} = require('./Controller/FruitController');
 
  /**
   * NOTES:
