@@ -1,3 +1,4 @@
+/* Producing promise */
 const persiapan = () =>{
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
@@ -22,22 +23,11 @@ const masak = () =>{
     })
 }
 
-const main = () => {
-    persiapan()
-        .then((result)=>{
-            console.log(result);
-            return rebusAir();
-        })
-        .then((result)=>{
-            console.log(result);
-            return masak();
-        })
-        .then((result)=>{
-            console.log(result);
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
+/* Consuming promise */
+const main = async () => {
+    console.log(await persiapan());
+    console.log(await rebusAir());
+    console.log(await masak());
 }
 
 main();
