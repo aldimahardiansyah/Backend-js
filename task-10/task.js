@@ -11,16 +11,24 @@
    * Fungsi untuk download file
    * @param {function} callback - Function callback show
    */
-  function download(callShowDownload) {
+  function download() {
     return new Promise(function(resolve, reject){
-        setTimeout(function () {
-            const result = "windows-10.exe";
-            resolve(callShowDownload(result));
-          }, 3000);
+      
+      setTimeout(function () {
+        const result = "windows-10.exe";
+        const status = true;
+
+          if(status){
+            resolve(result);
+          }else{
+            reject('Download gagal');
+          }
+      }, 3000);
     })
 }
   
-  download(showDownload)
+  download()
+    .then(showDownload(result))
   
   /**
    * TODO:
