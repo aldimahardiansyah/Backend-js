@@ -5,7 +5,7 @@ class StudentController {
     async index(req, res) {
         const student = await Student.all();
 
-        if (student[0]) {
+        if (student.length !== 0) {
             const data = {
                 message: "Menampilkan data student",
                 data: student
