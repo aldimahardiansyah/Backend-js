@@ -47,10 +47,18 @@ class StudentController {
             return res.status(422).json(data);
         }
 
+        const input = {
+            nama,
+            nim,
+            jurusan,
+            email,
+            created_at: new Date()
+        }
+
         // else
         // jalankan method create dari Model student
         // kirim data
-        const student = await Student.create(req.body);
+        const student = await Student.create(input);
         const data = {
             message: `Menambahkan data student`,
             data: student
